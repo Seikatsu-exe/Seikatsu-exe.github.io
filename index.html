@@ -17,29 +17,24 @@
       property="og:description"
       content="Wouldn't really call this a portfolio, but I guess I wanted to finally use this domain for something"
     />
-    <script type="text/javascript">
-      if (screen.width <= 699) {
-        document.location = "/mobile";
-      }
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hello there</title>
   </head>
   <style>
     body {
-      background: #1E1C31;
+      background: #1e1c31;
       transition: 0.2s ease-in-out;
     }
     audio {
-      color: #CBE3E7;
-      background: #100E23;
+      color: #cbe3e7;
+      background: #100e23;
     }
     .icon {
-      fill: #CBE3E7;
+      fill: #cbe3e7;
       transition: 0.2s ease-in-out;
     }
     .icon:hover {
-      fill: #A37ACC;
+      fill: #a37acc;
       transition: 0.2s ease-in-out;
     }
     .pfp {
@@ -49,21 +44,22 @@
       transition: 0.2s ease-in-out;
     }
     .comment {
-      color: #8A889D;
+      color: #8a889d;
     }
     .highlight {
-      color: #A37ACC;
+      cursor: pointer;
+      color: #a37acc;
       transition: 0.2s ease-in-out;
     }
     .highlight:hover {
-      color: #D4BFFF;
+      color: #d4bfff;
       transition: 0.2s ease-in-out;
     }
     section {
       font-family: "Courier New", "Lucida Console", monospace;
       background: rgba(30, 28, 49, 0.9);
       text-align: center;
-      color: #CBE3E7;
+      color: #cbe3e7;
       border-radius: 1em;
       padding: 1em;
       position: absolute;
@@ -74,7 +70,7 @@
       transform: translate(-50%, -50%);
     }
     a {
-      color: #CBE3E7;
+      color: #cbe3e7;
     }
     #particles-js canvas {
       display: block;
@@ -104,38 +100,54 @@
       border-bottom: 2px solid #5f526f;
       width: 75%;
     }
+    .discordlink {
+      cursor: pointer;
+      color: #65B2FF;
+      transition: 0.2s ease-in-out;
+    }
+    .discordlink:hover {
+      color: #91DDFF;
+      transition: 0.2s ease-in-out;
+    }
+    .githublink a {
+      text-decoration: none;
+      color: #62D196;
+      transition: 0.2s ease-in-out;
+    }
+    .githublink:hover a {
+      color: #A1EFD3;
+      transition: 0.2s ease-in-out;
+    }
   </style>
 
   <body>
     <div id="pain">
-    <div id="particles-js"></div>
-    <div id="wrapper">
-      <section id="card">
-        <p>
-          heyo, I'm <b class="highlight">Seikatsu</b>
-          <br /><br />
-          <img
-            class="pfp"
-            src="https://cdn.glitch.global/0a75bf0d-fe14-4e69-9f35-f8453b89c8fc/sei.png?v=1668838631961"
-            width="200"
-            height="200"
-          />
-        </p>
-        <p>
-          here are my links and stuff
+      <div id="particles-js"></div>
+      <div id="wrapper">
+        <section id="card">
+          <p>
+            heyo, I'm <b id="name" class="highlight">Seikatsu</b> <br /><br />
+            <img
+              class="pfp"
+              src="https://cdn.glitch.global/0a75bf0d-fe14-4e69-9f35-f8453b89c8fc/sei.png?v=1668838631961"
+              width="200"
+              height="200"
+            />
+          </p>
+          <p>here are my links and stuff</p>
+          <p><b class="discordlink" id="discord">Discord</b> | <b class="githublink"><a href="https://github.com/SeikatsuChan" target="blank">GitHub</a></b></p>
           <div class="comment" id="randomComment">
-            loading...
+            <p>loading...</p>
           </div>
-       </p>
-        <audio id="depression" loop>
-          <source
-            src="https://cdn.glitch.global/0a75bf0d-fe14-4e69-9f35-f8453b89c8fc/vibe.mp3?v=1668835273798"
-            type="audio/mpeg"
-          />
-          Imagine having a browser that doesn't accept my cute mp3
-        </audio>
-      </section>
-    </div>
+          <audio id="depression" loop>
+            <source
+              src="https://cdn.glitch.global/0a75bf0d-fe14-4e69-9f35-f8453b89c8fc/vibe.mp3?v=1668835273798"
+              type="audio/mpeg"
+            />
+            Imagine having a browser that doesn't accept my cute mp3
+          </audio>
+        </section>
+      </div>
     </div>
   </body>
   <script>
@@ -171,10 +183,12 @@
     }
   </script>
   <script>
-    window.onload = (event) => 
-    {
+    window.onload = (event) => {
+      if (screen.width <= 699) {
+        document.getElementById('card').style.width = "80%"
+      }
       var comments = [
-        "// try clicking the page",
+        "// try clicking my name",
         "// written with hate by Seikatsu",
         "// do NOT look at my awful source code",
         "// TODO: add literally anything here",
@@ -183,7 +197,7 @@
         "// embark theme is based",
         "// (![]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(![]+[])[!+[]+!+[]+!+[]]",
         "// why are we here?",
-        "// TODO: fix \"competency not found\" error",
+        '// TODO: fix "competency not found" error',
         "// no one can hear us",
         "// I'm just using this to mess with JS",
         "// how did you end up here?",
@@ -191,27 +205,35 @@
         "// I wrote this at 1:41 AM",
         "// not an egirl",
         "// these are randomized",
-        "// among"
-      ]
-      var random =  Math.floor(Math.random() * comments.length);
-      document.getElementById('randomComment').innerText = comments[random]
-      
+        "// among",
+        "// you love pages that autoplay audio"
+      ];
+      var random = Math.floor(Math.random() * comments.length);
+      document.getElementById("randomComment").innerText = comments[random];
+
       var sadness = document.getElementById("depression");
       sadness.volume = "0.15";
       sadness.playbackRate = 1.0;
-      sadness.play();     
+      sadness.play();
       
-      var dread = document.getElementById("pain");
+      var discordlink = document.getElementById("discord");
+      discordlink.onclick = function() {
+        navigator.clipboard.writeText("Seikatsu#0001")
+        discordlink.innerText = "Copied!"
+        setTimeout(() => {  discordlink.innerText = "Discord" }, 2000);
+      }
+
+      var dread = document.getElementById("name");
       
-      dread.onclick = function() {
-        if(sadness.playbackRate == 1.0) {
+      dread.onclick = function () {
+        if (sadness.playbackRate == 1.0) {
           document.body.style.background = "#3E3859";
           sadness.playbackRate = 1.6;
         } else {
           document.body.style.background = "#1E1C31";
           sadness.playbackRate = 1.0;
         }
-      } 
+      };
     };
   </script>
   <script src=".jquery.min.js"></script>
