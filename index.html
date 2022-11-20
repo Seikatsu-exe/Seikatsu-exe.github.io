@@ -119,6 +119,11 @@
       color: #a1efd3;
       transition: 0.2s ease-in-out;
     }
+    .hidden {
+      transition: 0.9s ease-in-out;
+      display: none;
+      color: #d4bfff;
+    }
   </style>
 
   <body>
@@ -136,6 +141,7 @@
               height="200"
             />
           </p>
+          <p class="hidden" id="hidden">Could you stop touching me?</p>
           <p>here are my links and stuff</p>
           <p>
             <b class="discordlink" id="discord">Discord</b> |
@@ -203,7 +209,56 @@
           discordlink.innerText = "Discord";
         }, 2000);
       };
-
+      var avatarclicks = 0;
+      document.getElementById("pfp").onclick = function () {
+        if (avatarclicks == 10) {
+          document.getElementById("hidden").style.display = "block";
+        }
+        if (avatarclicks == 20) {
+          document.getElementById("hidden").innerText =
+            "R-really, this is pretty weird";
+        }
+        if (avatarclicks == 30) {
+          document.getElementById("hidden").innerText =
+            "Is this some kind of interrogation? What do you want from me?";
+        }
+        if (avatarclicks == 40) {
+          document.getElementById("hidden").innerText = "Come on, stop it...";
+        }
+        if (avatarclicks == 50) {
+          document.getElementById("hidden").innerText =
+            "This is a waste of time!";
+        }
+        if (avatarclicks == 60) {
+          document.getElementById("hidden").innerText = "...";
+        }
+        if (avatarclicks == 80) {
+          document.getElementById("hidden").innerText =
+            "Fine, fine, I get it, it's like one of those clicker games";
+        }
+        if (avatarclicks == 90) {
+          document.getElementById("hidden").innerText =
+            "You know what, I'll make you a counter...";
+        }
+        if (avatarclicks > 99) {
+          document.getElementById("hidden").innerText =
+            "You've clicked on me " + avatarclicks + " times... satisfied?";
+        }
+        if (avatarclicks > 999) {
+          document.getElementById("hidden").innerText =
+            "You've clicked on me " +
+            avatarclicks +
+            " times! You have to be getting bored...";
+        }
+        if (avatarclicks == 1337) {
+          document.getElementById("hidden").innerText =
+            "You should check the console by the way...";
+          console.log(
+            "Just kidding lol, I WAS going to put something here but I'm far too lazy for that."
+          );
+        }
+        avatarclicks++;
+      };
       var dread = document.getElementById("name");
 
       dread.onclick = function () {
