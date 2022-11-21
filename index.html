@@ -124,6 +124,26 @@
       display: none;
       color: #d4bfff;
     }
+    .colormode {
+      color: #ffe6b3;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      font-size: 30px;
+    }
+    .colormode:hover {
+      color: #f2b482;
+    }
+    .musicstart {
+      color: #87dfeb;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      font-size: 30px;
+      display: none;
+      margin-left: 10px;
+    }
+    .musicstart:hover {
+      color: #63f2f1;
+    }
   </style>
 
   <body>
@@ -142,6 +162,7 @@
             />
           </p>
           <p class="hidden" id="hidden">Could you stop touching me?</p>
+
           <p>here are my links and stuff</p>
           <p>
             <b class="discordlink" id="discord">Discord</b> |
@@ -154,6 +175,10 @@
           <div class="comment" id="randomComment">
             <p>loading...</p>
           </div>
+          <p>
+            <b class="colormode" id="colormode">☀</b
+            ><b class="musicstart" id="musicstart">𝅘𝅥𝅮</b>
+          </p>
           <audio id="depression" loop>
             <source
               src="https://cdn.glitch.global/0a75bf0d-fe14-4e69-9f35-f8453b89c8fc/vibe.mp3?v=1668835273798"
@@ -171,7 +196,7 @@
         document.getElementById("card").style.width = "80%";
       }
       var comments = [
-        "// try clicking my name",
+        "// 9/10 dentists recommend playing Seikatsu clicker",
         "// written with hate by Seikatsu",
         "// do NOT look at my awful source code",
         "// TODO: add literally anything here",
@@ -199,7 +224,21 @@
       var sadness = document.getElementById("depression");
       sadness.volume = "0.15";
       sadness.playbackRate = 1.0;
-      sadness.play();
+      var promise = sadness.play();
+      if (promise !== undefined) {
+        promise
+          .then((_) => {
+            console.log("you love autoplay");
+          })
+          .catch((error) => {
+            document.getElementById("musicstart").style.display = "inline";
+          });
+      }
+
+      document.getElementById("musicstart").onclick = function () {
+        sadness.play();
+        document.getElementById("musicstart").style.display = "none";
+      };
 
       var discordlink = document.getElementById("discord");
       discordlink.onclick = function () {
@@ -216,29 +255,28 @@
         }
         if (avatarclicks == 20) {
           document.getElementById("hidden").innerText =
-            "R-really, this is pretty weird";
+            "Really, you've clicked me over 20 times now...";
         }
         if (avatarclicks == 30) {
           document.getElementById("hidden").innerText =
-            "Is this some kind of interrogation? What do you want from me?";
+            "30... What do you want from me?";
         }
         if (avatarclicks == 40) {
           document.getElementById("hidden").innerText = "Come on, stop it...";
         }
         if (avatarclicks == 50) {
           document.getElementById("hidden").innerText =
-            "This is a waste of time!";
+            "There are better uses of your time!";
         }
         if (avatarclicks == 60) {
           document.getElementById("hidden").innerText = "...";
         }
         if (avatarclicks == 80) {
-          document.getElementById("hidden").innerText =
-            "Fine, fine, I get it, it's like one of those clicker games";
+          document.getElementById("hidden").innerText = "Still...?";
         }
         if (avatarclicks == 90) {
           document.getElementById("hidden").innerText =
-            "You know what, I'll make you a counter...";
+            "You know what, fine, if you want Seikatsu clicker so badly...";
         }
         if (avatarclicks > 99) {
           document.getElementById("hidden").innerText =
@@ -259,10 +297,11 @@
         }
         avatarclicks++;
       };
-      var dread = document.getElementById("name");
+      var dread = document.getElementById("colormode");
 
       dread.onclick = function () {
         if (sadness.playbackRate == 1.0) {
+          dread.innerText = "☽";
           document.body.style.background = "#3E3859";
           document.getElementById("card").style.background =
             "rgba(62, 56, 89, 0.9)";
@@ -270,6 +309,7 @@
             "rgba(62, 56, 89, 0.9)";
           sadness.playbackRate = 1.6;
         } else {
+          dread.innerText = "☀";
           document.body.style.background = "#1E1C31";
           document.getElementById("card").style.background =
             "rgba(30, 28, 49, 0.9)";
