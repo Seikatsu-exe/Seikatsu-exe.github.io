@@ -167,7 +167,7 @@
           <p>
             <b class="discordlink" id="discord">Discord</b> |
             <b class="githublink"
-              ><a href="https://github.com/SeikatsuChan" target="blank"
+              ><a href="https://github.com/Seikatsuuna" target="blank"
                 >GitHub</a
               ></b
             >
@@ -181,7 +181,7 @@
           </p>
           <audio id="depression" loop>
             <source
-              src="https://cdn.glitch.global/0a75bf0d-fe14-4e69-9f35-f8453b89c8fc/vibe.mp3?v=1668835273798"
+              src="https://cdn.discordapp.com/attachments/1009301718816796715/1084560858576867478/vibes.mp3"
               type="audio/mpeg"
             />
             Imagine having a browser that doesn't accept my cute mp3
@@ -242,7 +242,7 @@
 
       var discordlink = document.getElementById("discord");
       discordlink.onclick = function () {
-        navigator.clipboard.writeText("Seikatsu#0001");
+        navigator.clipboard.writeText("Seikatsu#5910");
         discordlink.innerText = "Copied!";
         setTimeout(() => {
           discordlink.innerText = "Discord";
@@ -253,31 +253,6 @@
         if (avatarclicks == 10) {
           document.getElementById("hidden").style.display = "block";
         }
-        if (avatarclicks == 20) {
-          document.getElementById("hidden").innerText =
-            "Really, you've clicked me over 20 times now...";
-        }
-        if (avatarclicks == 30) {
-          document.getElementById("hidden").innerText =
-            "30... What do you want from me?";
-        }
-        if (avatarclicks == 40) {
-          document.getElementById("hidden").innerText = "Come on, stop it...";
-        }
-        if (avatarclicks == 50) {
-          document.getElementById("hidden").innerText =
-            "There are better uses of your time!";
-        }
-        if (avatarclicks == 60) {
-          document.getElementById("hidden").innerText = "...";
-        }
-        if (avatarclicks == 80) {
-          document.getElementById("hidden").innerText = "Still...?";
-        }
-        if (avatarclicks == 90) {
-          document.getElementById("hidden").innerText =
-            "You know what, fine, if you want Seikatsu clicker so badly...";
-        }
         if (avatarclicks > 99) {
           document.getElementById("hidden").innerText =
             "You've clicked on me " + avatarclicks + " times... satisfied?";
@@ -287,13 +262,6 @@
             "You've clicked on me " +
             avatarclicks +
             " times! You have to be getting bored...";
-        }
-        if (avatarclicks == 1337) {
-          document.getElementById("hidden").innerText =
-            "You should check the console by the way...";
-          console.log(
-            "Just kidding lol, I WAS going to put something here but I'm far too lazy for that."
-          );
         }
         avatarclicks++;
       };
@@ -307,7 +275,6 @@
             "rgba(62, 56, 89, 0.9)";
           document.getElementById("pfp").style.borderColor =
             "rgba(62, 56, 89, 0.9)";
-          sadness.playbackRate = 1.6;
         } else {
           dread.innerText = "☀";
           document.body.style.background = "#1E1C31";
@@ -315,7 +282,6 @@
             "rgba(30, 28, 49, 0.9)";
           document.getElementById("pfp").style.borderColor =
             "rgba(30, 28, 49, 0.9)";
-          sadness.playbackRate = 1.0;
         }
       };
     };
