@@ -176,7 +176,6 @@
             <p>loading...</p>
           </div>
           <p>
-            <b class="colormode" id="colormode">☀</b
             ><b class="musicstart" id="musicstart">𝅘𝅥𝅮</b>
           </p>
           <audio id="depression" loop>
@@ -264,25 +263,6 @@
             " times! You have to be getting bored...";
         }
         avatarclicks++;
-      };
-      var dread = document.getElementById("colormode");
-
-      dread.onclick = function () {
-        if (sadness.playbackRate == 1.0) {
-          dread.innerText = "☽";
-          document.body.style.background = "#3E3859";
-          document.getElementById("card").style.background =
-            "rgba(62, 56, 89, 0.9)";
-          document.getElementById("pfp").style.borderColor =
-            "rgba(62, 56, 89, 0.9)";
-        } else {
-          dread.innerText = "☀";
-          document.body.style.background = "#1E1C31";
-          document.getElementById("card").style.background =
-            "rgba(30, 28, 49, 0.9)";
-          document.getElementById("pfp").style.borderColor =
-            "rgba(30, 28, 49, 0.9)";
-        }
       };
     };
   </script>
