@@ -22,45 +22,45 @@
   </head>
   <style>
     body {
-      background: #1e1c31;
+      background: #181926;
       transition: 0.2s ease-in-out;
     }
     audio {
-      color: #cbe3e7;
+      color: #cad3f5;
       background: #100e23;
     }
     .icon {
-      fill: #cbe3e7;
+      fill: #cad3f5;
       transition: 0.2s ease-in-out;
     }
     .icon:hover {
-      fill: #a37acc;
+      fill: #c6a0f6;
       transition: 0.2s ease-in-out;
     }
     .pfp {
       border-radius: 200px;
       border-style: solid;
-      border-color: rgba(30, 28, 49, 0.9);
+      border-color: rgba(36, 39, 58, 0.9);
       transition: 0.2s ease-in-out;
     }
     .comment {
-      color: #8a889d;
+      color: #8087a2;
     }
     .highlight {
       cursor: pointer;
-      color: #a37acc;
+      color: #c6a0f6;
       transition: 0.2s ease-in-out;
     }
     .highlight:hover {
-      color: #d4bfff;
+      color: #b7bdf8;
       transition: 0.2s ease-in-out;
     }
     section {
       transition: 0.2s ease-in-out;
       font-family: "Courier New", "Lucida Console", monospace;
-      background: rgba(30, 28, 49, 0.9);
+      background: rgba(24, 25, 38, 0.9);
       text-align: center;
-      color: #cbe3e7;
+      color: #cad3f5;
       border-radius: 1em;
       padding: 1em;
       position: absolute;
@@ -71,7 +71,7 @@
       transform: translate(-50%, -50%);
     }
     a {
-      color: #cbe3e7;
+      color: #cad3f5;
     }
     #particles-js canvas {
       display: block;
@@ -103,35 +103,35 @@
     }
     .discordlink {
       cursor: pointer;
-      color: #65b2ff;
+      color: #8aadf4;
       transition: 0.2s ease-in-out;
     }
     .discordlink:hover {
-      color: #91ddff;
+      color: #cad3f5;
       transition: 0.2s ease-in-out;
     }
     .githublink a {
       text-decoration: none;
-      color: #62d196;
+      color: #a6da95;
       transition: 0.2s ease-in-out;
     }
     .githublink:hover a {
-      color: #a1efd3;
+      color: #cad3f5;
       transition: 0.2s ease-in-out;
     }
     .mastodonlink a {
       text-decoration: none;
-      color: #7676FF;
+      color: #c6a0f6;
       transition: 0.2s ease-in-out;
     }
     .mastodonlink:hover a {
-      color: #D4BFFF;
+      color: #cad3f5;
       transition: 0.2s ease-in-out;
     }
     .hidden {
       transition: 0.9s ease-in-out;
       display: none;
-      color: #d4bfff;
+      color: #b7bdf8;
     }
     .colormode {
       color: #ffe6b3;
@@ -143,7 +143,7 @@
       color: #f2b482;
     }
     .musicstart {
-      color: #87dfeb;
+      color: #8087a2;
       cursor: pointer;
       transition: 0.2s ease-in-out;
       font-size: 30px;
@@ -151,7 +151,7 @@
       margin-left: 10px;
     }
     .musicstart:hover {
-      color: #63f2f1;
+      color: #b7bdf8;
     }
   </style>
 
@@ -178,10 +178,17 @@
             <b class="githublink"
               ><a href="https://github.com/Seikatsuuna" target="blank"
                 >GitHub</a
-              ></b> | <b class="mastodonlink"><a href="https://gensokyo.social/@seikatsu" target="blank">Mastodon</a></b>
+              ></b
+            >
+            |
+            <b class="mastodonlink"
+              ><a href="https://gensokyo.social/@seikatsu" target="blank"
+                >Mastodon</a
+              ></b
+            >
           </p>
-          <div class="comment" id="randomComment">
-            <p>loading...</p>
+          <div class="comment">
+            <p id="randomComment"></p>
           </div>
           <p>
             <b class="musicstart" id="musicstart">𝅘𝅥𝅮</b>
@@ -209,7 +216,7 @@
         "// TODO: add literally anything here",
         "// enjoy some calming music",
         "// kanged with love",
-        "// embark theme is based",
+        "// catppuccin theme is based",
         "// (![]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(![]+[])[!+[]+!+[]+!+[]]",
         "// why are we here?",
         '// TODO: fix "competency not found" error',
@@ -226,8 +233,20 @@
         "// 01110000 01100101 01100101",
       ];
       var random = Math.floor(Math.random() * comments.length);
-      document.getElementById("randomComment").innerText = comments[random];
+      //document.getElementById("randomComment").innerText = comments[random];
+      var thisChar = 0;
+      var txt = comments[random]; /* The text */
+      var speed = 50; /* The speed/duration of the effect in milliseconds */
 
+      function typeWriter() {
+        if (thisChar < txt.length) {
+          document.getElementById("randomComment").innerHTML +=
+            txt.charAt(thisChar);
+          thisChar++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+      typeWriter();
       var sadness = document.getElementById("depression");
       sadness.volume = "0.15";
       sadness.playbackRate = 1.0;
