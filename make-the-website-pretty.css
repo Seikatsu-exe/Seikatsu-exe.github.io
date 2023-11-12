@@ -1,0 +1,188 @@
+:root {
+  /* TODO: Use these vars to make light theme */
+  --background-color: #181926;
+  --background-color-semi-transparent: rgba(24, 25, 38, 0.9);
+  --profile-border: rgba(36, 39, 58, 0.9);
+  --text-color: #cad3f5;
+  --purple: #c6a0f6;
+  --green: #a6da95;
+  --lavender: #b7bdf8;
+  --blue: #8aadf4;
+  --comment: #8087a2;
+}
+body {
+  background: var(--background-color);
+  transition: 0.2s ease-in-out;
+}
+audio {
+  color: var(--text-color);
+  background: #100e23;
+}
+
+.blue {
+  cursor: pointer;
+  color: var(--blue);
+  transition: 0.2s ease-in-out;
+}
+.blue:hover {
+  color: var(--text-color);
+  transition: 0.2s ease-in-out;
+}
+
+.icon {
+  fill: var(--text-color);
+  transition: 0.2s ease-in-out;
+}
+.icon:hover {
+  fill: var(--purple);
+  transition: 0.2s ease-in-out;
+}
+.pfp {
+  border-radius: 200px;
+  border-style: solid;
+  border-color: var(--profile-border);
+  transition: 0.2s ease-in-out;
+}
+.comment {
+  color: var(--comment);
+}
+.highlight {
+  cursor: pointer;
+  color: var(--purple);
+  transition: 0.2s ease-in-out;
+}
+.highlight:hover {
+  color: var(--lavender);
+  transition: 0.2s ease-in-out;
+}
+.card {
+  transition: 0.2s ease-in-out;
+  font-family: "Courier New", "Lucida Console", monospace;
+  background: var(--background-color-semi-transparent);
+  text-align: center;
+  color: var(--text-color);
+  border-radius: 1em;
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.schizocard {
+  transition: visibility 0s, opacity 0.5s linear;  
+  font-family: "Courier New", "Lucida Console", monospace;
+  background: var(--background-color-semi-transparent);
+  text-align: center;
+  color: var(--text-color);
+  border-radius: 1em;
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+a {
+  color: var(--text-color);
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  z-index: -1;
+}
+
+#particles-js canvas {
+  display: block;
+  vertical-align: bottom;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  -webkit-transition: opacity 0.8s ease, -webkit-transform 1.4s ease;
+  transition: opacity 0.8s ease, transform 1.4s ease;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
+
+hr {
+  border-top: 2px solid #5f526f;
+  border-bottom: 2px solid #5f526f;
+  width: 75%;
+}
+.discordlink {
+  cursor: pointer;
+  color: var(--blue);
+  transition: 0.2s ease-in-out;
+}
+.discordlink:hover {
+  color: var(--text-color);
+  transition: 0.2s ease-in-out;
+}
+.githublink a {
+  text-decoration: none;
+  color: var(--green);
+  transition: 0.2s ease-in-out;
+}
+
+.mastodonlink a {
+  text-decoration: none;
+  color: var(--purple);
+  transition: 0.2s ease-in-out;
+}
+
+.githublink:hover a {
+  color: var(--text-color);
+  transition: 0.2s ease-in-out;
+}
+
+.mastodonlink:hover a {
+  color: var(--text-color);
+  transition: 0.2s ease-in-out;
+}
+.hidden {
+  transition: 0.9s ease-in-out;
+  display: none;
+  color: var(--lavender);
+}
+.musicstart {
+  color: var(--comment);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  font-size: 30px;
+  display: none;
+  margin-left: 10px;
+}
+.musicstart:hover {
+  color: var(--lavender);
+}
+.main {
+  display: block;
+}
+.aboutme {
+  display: none;
+}
+#overlay {
+  transition: 0.5s ease-in-out;
+  position: fixed; 
+  visibility: hidden; 
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); 
+  z-index: 2;
+}
