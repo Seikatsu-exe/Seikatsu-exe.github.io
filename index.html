@@ -6,6 +6,7 @@
       type="image/x-icon"
       href="https://cdn.glitch.global/0b7af9a9-a150-46ba-8529-db64d2774bb8/heart.png?v=1662422827547"
     />
+    <link rel="stylesheet" href="make-the-website-pretty.css" />
     <meta charset="UTF-8" />
     <meta property="og:type" content="website" />
     <meta
@@ -20,179 +21,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hello there</title>
   </head>
-  <style>
-    body {
-      background: #181926;
-      transition: 0.2s ease-in-out;
-    }
-    audio {
-      color: #cad3f5;
-      background: #100e23;
-    }
-    .icon {
-      fill: #cad3f5;
-      transition: 0.2s ease-in-out;
-    }
-    .icon:hover {
-      fill: #c6a0f6;
-      transition: 0.2s ease-in-out;
-    }
-    .pfp {
-      border-radius: 200px;
-      border-style: solid;
-      border-color: rgba(36, 39, 58, 0.9);
-      transition: 0.2s ease-in-out;
-    }
-    .comment {
-      color: #8087a2;
-    }
-    .highlight {
-      cursor: pointer;
-      color: #c6a0f6;
-      transition: 0.2s ease-in-out;
-    }
-    .highlight:hover {
-      color: #b7bdf8;
-      transition: 0.2s ease-in-out;
-    }
-    section {
-      transition: 0.2s ease-in-out;
-      font-family: "Courier New", "Lucida Console", monospace;
-      background: rgba(24, 25, 38, 0.9);
-      text-align: center;
-      color: #cad3f5;
-      border-radius: 1em;
-      padding: 1em;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 40%;
-      margin-right: -50%;
-      transform: translate(-50%, -50%);
-    }
-    a {
-      color: #cad3f5;
-    }
-    #particles-js canvas {
-      display: block;
-      vertical-align: bottom;
-      -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-      transform: scale(1);
-      opacity: 1;
-      -webkit-transition: opacity 0.8s ease, -webkit-transform 1.4s ease;
-      transition: opacity 0.8s ease, transform 1.4s ease;
-    }
-    #particles-js {
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      z-index: -10;
-      top: 0;
-      left: 0;
-    }
-    canvas {
-      display: block;
-      position: fixed;
-      z-index: -1;
-    }
-    hr {
-      border-top: 2px solid #5f526f;
-      border-bottom: 2px solid #5f526f;
-      width: 75%;
-    }
-    .discordlink {
-      cursor: pointer;
-      color: #8aadf4;
-      transition: 0.2s ease-in-out;
-    }
-    .discordlink:hover {
-      color: #cad3f5;
-      transition: 0.2s ease-in-out;
-    }
-    .githublink a {
-      text-decoration: none;
-      color: #a6da95;
-      transition: 0.2s ease-in-out;
-    }
-    .githublink:hover a {
-      color: #cad3f5;
-      transition: 0.2s ease-in-out;
-    }
-    .mastodonlink a {
-      text-decoration: none;
-      color: #c6a0f6;
-      transition: 0.2s ease-in-out;
-    }
-    .mastodonlink:hover a {
-      color: #cad3f5;
-      transition: 0.2s ease-in-out;
-    }
-    .hidden {
-      transition: 0.9s ease-in-out;
-      display: none;
-      color: #b7bdf8;
-    }
-    .colormode {
-      color: #ffe6b3;
-      cursor: pointer;
-      transition: 0.2s ease-in-out;
-      font-size: 30px;
-    }
-    .colormode:hover {
-      color: #f2b482;
-    }
-    .musicstart {
-      color: #8087a2;
-      cursor: pointer;
-      transition: 0.2s ease-in-out;
-      font-size: 30px;
-      display: none;
-      margin-left: 10px;
-    }
-    .musicstart:hover {
-      color: #b7bdf8;
-    }
-  </style>
 
   <body>
     <div id="pain">
       <div id="particles-js"></div>
       <div id="wrapper">
-        <section id="card">
-          <p>
-            heyo, I'm <b id="name" class="highlight">Seikatsu</b> <br /><br />
+        <section class="card" id="card">
+          <p>heyo, I'm <b id="name" class="highlight">Seikatsu</b> <br /></p>
+          <div class="main" id="main">
             <img
               id="pfp"
               class="pfp"
-              src="https://media.discordapp.net/attachments/1009236147781767301/1083991285427351582/cute_cropped_1.png?width=221&height=221"
+              src="https://cdn.glitch.global/0a75bf0d-fe14-4e69-9f35-f8453b89c8fc/sei.png?v=1697243926837"
               width="200"
               height="200"
             />
-          </p>
-          <p class="hidden" id="hidden">Could you stop touching me?</p>
+            <p class="hidden" id="hidden">Could you stop touching me?</p>
 
-          <p>here are my links and stuff</p>
-          <p>
-            <b class="discordlink" id="discord">Discord</b> |
-            <b class="githublink"
-              ><a href="https://github.com/Seikatsuuna" target="blank"
-                >GitHub</a
-              ></b
-            >
-            |
-            <b class="mastodonlink"
-              ><a href="https://gensokyo.social/@seikatsu" target="blank"
-                >Mastodon</a
-              ></b
-            >
-          </p>
-          <div class="comment">
-            <p id="randomComment"></p>
+            <p>here are my links and stuff</p>
+            <p>
+              <b class="discordlink" id="discord">Discord</b> |
+              <b class="githublink"
+                ><a href="https://github.com/Seikatsuuna" target="blank"
+                  >GitHub</a
+                ></b
+              >
+              |
+              <b class="mastodonlink"
+                ><a
+                  rel="me"
+                  href="https://gensokyo.social/@seikatsu"
+                  target="blank"
+                  >Mastodon</a
+                ></b
+              >
+            </p>
+            <div class="comment">
+              <p id="randomComment">//</p>
+            </div>
+            <p>
+              <b class="musicstart" id="musicstart">𝅘𝅥𝅮</b>
+            </p>
           </div>
-          <p>
-            <b class="musicstart" id="musicstart">𝅘𝅥𝅮</b>
-          </p>
+          <div id="about" class="aboutme">
+            <p id="aboutme"></p>
+          </div>
           <audio id="depression" loop>
             <source
               src="https://cdn.discordapp.com/attachments/1009301718816796715/1084560858576867478/vibes.mp3"
@@ -205,95 +78,107 @@
     </div>
   </body>
   <script>
+    // Note to self. For some reason, I had this onload event extend through the ENTIRE script, which was borking mobile; Unsure if shitcode or a workaround to something that broke before.
     window.onload = (event) => {
       if (screen.width <= 699) {
         document.getElementById("card").style.width = "80%";
+        document.getElementById("schizocard").style.width = "80%";
       }
-      var comments = [
-        "// 9/10 dentists recommend playing Seikatsu clicker",
-        "// written with hate by Seikatsu",
-        "// do NOT look at my awful source code",
-        "// TODO: add literally anything here",
-        "// enjoy some calming music",
-        "// kanged with love",
-        "// catppuccin theme is based",
-        "// (![]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(![]+[])[!+[]+!+[]+!+[]]",
-        "// why are we here?",
-        '// TODO: fix "competency not found" error',
-        "// no one can hear us",
-        "// I'm just using this to mess with JS",
-        "// how did you end up here?",
-        "// explod",
-        "// I wrote this at 1:41 AM",
-        "// not an egirl",
-        "// these are randomized",
-        "// among",
-        "// you love pages that autoplay audio",
-        "// [imagine markdown](https://www.youtube.com/watch?v=dQw4w9WgXcQ)",
-        "// 01110000 01100101 01100101",
-      ];
-      var random = Math.floor(Math.random() * comments.length);
-      //document.getElementById("randomComment").innerText = comments[random];
-      var thisChar = 0;
-      var txt = comments[random]; /* The text */
-      var speed = 50; /* The speed/duration of the effect in milliseconds */
+    };
+    var comments = [
+      " 9/10 dentists recommend playing Seikatsu clicker",
+      " written with hate by Seikatsu",
+      " do NOT look at my awful source code",
+      " TODO: add literally anything here",
+      " enjoy some calming music",
+      " kanged with love",
+      " catppuccin theme is based",
+      " (![]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(![]+[])[!+[]+!+[]+!+[]]",
+      " why are we here?",
+      ' TODO: fix "competency not found" error',
+      " no one can hear us",
+      " I'm just using this to mess with JS",
+      " how did you end up here?",
+      " explod",
+      " I wrote this at 1:41 AM",
+      " not an egirl",
+      " these are randomized",
+      " among",
+      " you love pages that autoplay audio",
+      " [imagine markdown](https://www.youtube.com/watch?v=dQw4w9WgXcQ)",
+      " 01110000 01100101 01100101",
+      " click the bottom right to scream at me",
+    ];
+    var random = Math.floor(Math.random() * comments.length);
+    var thisChar = 0;
+    var txt = comments[random];
+    var speed = 50;
 
-      function typeWriter() {
-        if (thisChar < txt.length) {
-          document.getElementById("randomComment").innerHTML +=
-            txt.charAt(thisChar);
-          thisChar++;
-          setTimeout(typeWriter, speed);
-        }
+    function typeWriter() {
+      if (thisChar < txt.length) {
+        document.getElementById("randomComment").innerHTML +=
+          txt.charAt(thisChar);
+        thisChar++;
+        setTimeout(typeWriter, speed);
       }
-      typeWriter();
-      var sadness = document.getElementById("depression");
-      sadness.volume = "0.15";
-      sadness.playbackRate = 1.0;
-      var promise = sadness.play();
-      if (promise !== undefined) {
-        promise
-          .then((_) => {
-            console.log("you love autoplay");
-          })
-          .catch((error) => {
-            document.getElementById("musicstart").style.display = "inline";
-          });
+    }
+    typeWriter();
+
+    var sadness = document.getElementById("depression");
+    sadness.volume = "0.15";
+    sadness.playbackRate = 1.0;
+    var promise = sadness.play();
+    if (promise !== undefined) {
+      promise
+        .then((_) => {
+          console.log("you love autoplay");
+        })
+        .catch((error) => {
+          document.getElementById("musicstart").style.display = "inline";
+        });
+    }
+
+    document.getElementById("musicstart").onclick = function () {
+      sadness.play();
+      document.getElementById("musicstart").style.display = "none";
+    };
+
+    var discordlink = document.getElementById("discord");
+    discordlink.onclick = function () {
+      navigator.clipboard.writeText("seikatsu.exe");
+      discordlink.innerText = "Copied!";
+      setTimeout(() => {
+        discordlink.innerText = "Discord";
+      }, 2000);
+    };
+    var avatarclicks = 0;
+    document.getElementById("pfp").onclick = function () {
+      if (avatarclicks == 10) {
+        document.getElementById("hidden").style.display = "block";
       }
-
-      document.getElementById("musicstart").onclick = function () {
-        sadness.play();
-        document.getElementById("musicstart").style.display = "none";
-      };
-
-      var discordlink = document.getElementById("discord");
-      discordlink.onclick = function () {
-        navigator.clipboard.writeText("Seikatsu#5910");
-        discordlink.innerText = "Copied!";
-        setTimeout(() => {
-          discordlink.innerText = "Discord";
-        }, 2000);
-      };
-      var avatarclicks = 0;
-      document.getElementById("pfp").onclick = function () {
-        if (avatarclicks == 10) {
-          document.getElementById("hidden").style.display = "block";
-        }
-        if (avatarclicks > 99) {
-          document.getElementById("hidden").innerText =
-            "You've clicked on me " + avatarclicks + " times... satisfied?";
-        }
-        if (avatarclicks > 999) {
-          document.getElementById("hidden").innerText =
-            "You've clicked on me " +
-            avatarclicks +
-            " times! You have to be getting bored...";
-        }
-        avatarclicks++;
-      };
+      if (avatarclicks > 99) {
+        document.getElementById("hidden").innerText =
+          "You've clicked on me " + avatarclicks + " times... satisfied?";
+      }
+      if (avatarclicks > 999) {
+        document.getElementById("hidden").innerText =
+          "You've clicked on me " +
+          avatarclicks +
+          " times! You have to be getting bored...";
+      }
+      avatarclicks++;
     };
   </script>
-  <script src=".jquery.min.js"></script>
+
   <script src="particles.js"></script>
   <script src="app.js"></script>
+  <script src="./oneko.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+    new Crate({
+        server: "1031028729226461194",
+        channel: "1163284017777496095",
+        notifications: true,
+        color: "#8aadf4"
+    })
+  </script>
 </html>
