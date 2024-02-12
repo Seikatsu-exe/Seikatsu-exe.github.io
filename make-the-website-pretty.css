@@ -9,6 +9,19 @@
   --lavender: #b7bdf8;
   --blue: #8aadf4;
   --comment: #8087a2;
+  /* WIP Light theme colors 
+      --background-color: #f2d5cf;
+      --background-color-semi-transparent: rgba(242, 213, 207, 0.9);
+      --profile-border: rgba(239, 241, 245, 0.9);
+      --text-color: #4c4f69;
+      --purple: #8839ef;
+      --green: #40a02b;
+      --lavender: #7287fd;
+      --blue: #1e66f5;
+      --comment: #8c8fa1;
+  
+  
+      */
 }
 body {
   background: var(--background-color);
@@ -175,14 +188,14 @@ hr {
 }
 #overlay {
   transition: 0.5s ease-in-out;
-  position: fixed; 
-  visibility: hidden; 
-  width: 100%; 
-  height: 100%; 
+  position: fixed; /* Sit on top of the page content */
+  visibility: hidden; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75); 
-  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.75); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
 }
