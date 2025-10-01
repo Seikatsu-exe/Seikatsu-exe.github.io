@@ -149,18 +149,7 @@ hr {
   transition: 0.2s ease-in-out;
 }
 
-.mastodonlink a {
-  text-decoration: none;
-  color: var(--purple);
-  transition: 0.2s ease-in-out;
-}
-
 .githublink:hover a {
-  color: var(--text-color);
-  transition: 0.2s ease-in-out;
-}
-
-.mastodonlink:hover a {
   color: var(--text-color);
   transition: 0.2s ease-in-out;
 }
